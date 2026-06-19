@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://titica-22450.github.io/main-portal-i-game-com-cn-2/sitemap.xml
