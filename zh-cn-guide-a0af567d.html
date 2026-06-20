@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>球盟会 · 站点介绍与可信说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf8f5;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #2c2b28;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #fffcf9;
+            border-radius: 32px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+            padding: 3rem 2.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .page {
+                padding: 2rem 1.25rem;
+            }
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            border-bottom: 1px solid #e8e2da;
+            padding-bottom: 2.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            color: #2b2823;
+            margin-bottom: 1rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: #6b645c;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 1.4rem;
+            font-weight: 550;
+            color: #3e3a33;
+            margin-bottom: 1.2rem;
+            padding-left: 0.75rem;
+            border-left: 4px solid #c4b6a4;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+            color: #3c3832;
+        }
+
+        .highlight-box {
+            background: #f2ede6;
+            border-left: 6px solid #b7a48c;
+            padding: 1.5rem 1.8rem;
+            border-radius: 0 16px 16px 0;
+            margin: 1.8rem 0;
+            font-size: 0.98rem;
+        }
+
+        .highlight-box strong {
+            color: #3d352c;
+        }
+
+        .grid-two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin: 1.8rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .grid-two {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+        }
+
+        .card {
+            background: #fffcf7;
+            border: 1px solid #e6ddd2;
+            border-radius: 20px;
+            padding: 1.6rem 1.4rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 550;
+            color: #3f3a32;
+            margin-bottom: 0.6rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #4f4941;
+            margin-bottom: 0;
+        }
+
+        .faq-item {
+            margin-top: 1.6rem;
+            border-bottom: 1px dashed #ddd5cb;
+            padding-bottom: 1.4rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-item .q {
+            font-weight: 550;
+            color: #3d352c;
+            margin-bottom: 0.4rem;
+        }
+
+        .faq-item .a {
+            color: #59534b;
+            font-size: 0.96rem;
+        }
+
+        .footnote {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2dbd0;
+            text-align: center;
+            font-size: 0.92rem;
+            color: #7b7267;
+        }
+
+        .footnote a {
+            color: #5c5145;
+            text-decoration: none;
+            border-bottom: 1px solid #c6b9ab;
+            transition: color 0.15s;
+        }
+
+        .footnote a:hover {
+            color: #9b8570;
+            border-bottom-color: #9b8570;
+        }
+
+        .inline-link {
+            color: #5c5145;
+            text-decoration: none;
+            border-bottom: 1px solid #c6b9ab;
+            transition: color 0.15s;
+        }
+
+        .inline-link:hover {
+            color: #9b8570;
+            border-bottom-color: #9b8570;
+        }
+
+        .note-tag {
+            display: inline-block;
+            background: #e6ddd2;
+            padding: 0.15rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            color: #4e463d;
+            letter-spacing: 0.3px;
+            margin-right: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- hero 区 -->
+        <div class="hero">
+            <h1>球盟会 · 可信介绍</h1>
+            <div class="subtitle">
+                基于长期运营与公开信息的站点说明，帮助浏览者快速了解平台定位与服务边界。
+            </div>
+        </div>
+
+        <!-- 站点说明区（嵌入链接） -->
+        <div class="section">
+            <h2>关于球盟会</h2>
+            <p>
+                <strong>球盟会</strong> 是一个面向中文用户的综合性信息与服务平台，自上线以来持续提供多元化的线上服务与内容。本站点以透明、稳定为基本运营原则，所有功能与资讯均基于用户实际需求设计。访问 <a href="https://zh-cn-qmh.com" class="inline-link">球盟会</a> 可了解完整的服务列表与最新动态，站点页面结构清晰，注重浏览效率。
+            </p>
+            <p>
+                平台长期关注用户体验与信息真实性，已积累一定规模的活跃用户群体。为便于新访客快速建立认知，以下从多个维度对站点进行客观说明。
+            </p>
+        </div>
+
+        <!-- 优势区（卡片网格） -->
+        <div class="section">
+            <h2>平台特点</h2>
+            <div class="grid-two">
+                <div class="card">
+                    <h3>信息结构清晰</h3>
+                    <p>页面分类与导航逻辑经过多次优化，重要内容可在三次点击内触达，减少无效浏览。</p>
+                </div>
+                <div class="card">
+                    <h3>内容持续迭代</h3>
+                    <p>根据用户反馈与行业变化定期更新版块，保持信息时效性与实用性。</p>
+                </div>
+                <div class="card">
+                    <h3>访问环境稳定</h3>
+                    <p>采用合理的基础架构与网络配置，保障日常访问流畅度与可用性。</p>
+                </div>
+                <div class="card">
+                    <h3>客服与反馈通道</h3>
+                    <p>提供多种联系渠道，用户问题通常在工作时段内得到响应与处理。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 可信说明区（引用块/提示框） -->
+        <div class="section">
+            <h2>可信说明</h2>
+            <div class="highlight-box">
+                <strong>重要提示：</strong> 本站无任何诱导注册或强制下载行为，所有功能均基于用户自愿使用。平台不存储敏感个人信息，亦不参与任何违法或灰色产业。如遇仿冒或可疑链接，请通过官方渠道核实。建议直接通过浏览器输入 <a href="https://zh-cn-qmh.com" class="inline-link">球盟会</a> 域名访问，避免轻信第三方推广入口。
+            </div>
+            <p>
+                平台运营主体信息透明，长期保持合规运营记录。用户在使用过程中如遇到界面异常、内容存疑或功能故障，均可通过站内公示的联系方式进行反馈。我们坚持用事实与细节建立信任，而非夸大宣传。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要区 -->
+        <div class="section">
+            <h2>常见疑问摘要</h2>
+
+            <div class="faq-item">
+                <div class="q">Q：球盟会是否需要注册才能浏览内容？</div>
+                <div class="a">大部分资讯与页面支持游客直接访问，仅部分互动功能需注册账户。具体权限以页面实际展示为准。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="q">Q：如何确认我访问的是官方网站？</div>
+                <div class="a">请核对浏览器地址栏域名是否为 <code>zh-cn-qmh.com</code>，并注意页面整体风格与信息一致性。如有疑问，可对比本站描述或联系客服确认。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="q">Q：平台内容更新频率如何？</div>
+                <div class="a">核心版块保持每月至少一次内容刷新，活动或公告类信息会在生效前及时发布。具体更新节奏视版块性质不同。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="q">Q：遇到页面无法打开或加载缓慢怎么办？</div>
+                <div class="a">建议先检查本地网络环境，或更换浏览器重试。如问题持续存在，可记录故障时间与截图，通过站内反馈渠道提交，技术团队会跟进排查。</div>
+            </div>
+        </div>
+
+        <!-- 底部链接与说明 -->
+        <div class="footnote">
+            <p>
+                <span class="note-tag">站点指南</span>
+                如希望进一步了解平台全貌，请访问 <a href="https://zh-cn-qmh.com">球盟会</a> · 本介绍页仅作客观信息呈现，不构成任何形式的承诺或担保。
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #9b9288;">
+                page built for reference · 内容定期复核 · 建议以实际站点为准
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
