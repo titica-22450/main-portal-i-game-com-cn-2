@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快速识别你的体育数据与资讯平台 · bb体育</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f7fa;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ---------- 深色头图 hero ---------- */
+        .hero {
+            background: linear-gradient(145deg, #0a0e1a 0%, #1b233a 100%);
+            color: #edf2f7;
+            padding: 80px 0 72px;
+            border-bottom: 4px solid #3b82f6;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #60a5fa;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #b0c4de;
+            margin-bottom: 28px;
+            max-width: 520px;
+        }
+
+        .hero .stat-badge {
+            display: inline-block;
+            background: rgba(96, 165, 250, 0.15);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #93c5fd;
+            margin-top: 8px;
+        }
+
+        .hero-right {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 28px;
+            padding: 32px 28px;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .hero-right h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: #cbd5e1;
+        }
+
+        .hero-right ul {
+            list-style: none;
+        }
+
+        .hero-right li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.98rem;
+            color: #d6e3f0;
+        }
+
+        .hero-right li:last-child {
+            border-bottom: none;
+        }
+
+        .hero-right li::before {
+            content: "▹";
+            color: #60a5fa;
+            font-weight: bold;
+        }
+
+        .hero-link-wrp {
+            margin-top: 24px;
+        }
+
+        .hero-link-wrp a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #3b82f6;
+            transition: color 0.2s;
+        }
+
+        .hero-link-wrp a:hover {
+            color: #bfdbfe;
+            border-bottom-style: solid;
+        }
+
+        /* ---------- 浅色正文区 ---------- */
+        .section {
+            padding: 64px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 28px;
+            letter-spacing: -0.01em;
+            color: #0f172a;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 48px;
+            height: 4px;
+            background: #3b82f6;
+            border-radius: 2px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 28px 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e9edf2;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+        }
+
+        .card .icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #0f172a;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        /* ---------- 说明区（双列） ---------- */
+        .explain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .explain-block {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .explain-block h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #0f172a;
+        }
+
+        .explain-block p {
+            font-size: 0.98rem;
+            color: #334155;
+            margin-bottom: 14px;
+        }
+
+        .explain-block a {
+            color: #2563eb;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            font-weight: 500;
+        }
+
+        .explain-block a:hover {
+            color: #1e40af;
+        }
+
+        /* ---------- FAQ 摘要 ---------- */
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px 36px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .faq-item {
+            padding: 16px 0;
+            border-bottom: 1px solid #eef2f6;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #0f172a;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .faq-a {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .faq-a a {
+            color: #2563eb;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* ---------- 底部链接 ---------- */
+        .footer-bar {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 40px 0 32px;
+            margin-top: 16px;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-inner .copy {
+            font-size: 0.9rem;
+        }
+
+        .footer-inner .link-group a {
+            color: #60a5fa;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 0.95rem;
+            border-bottom: 1px dotted transparent;
+        }
+
+        .footer-inner .link-group a:hover {
+            border-bottom-color: #60a5fa;
+        }
+
+        .footer-highlight {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+            margin-top: 24px;
+        }
+
+        .footer-highlight a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* ---------- 响应式 ---------- */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .explain-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 56px 0 48px;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-mini {
+                padding: 24px 20px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ======== HERO ======== -->
+<section class="hero">
+    <div class="container hero-grid">
+        <div>
+            <h1>体育数据 · 赛事脉搏<br><span>bb体育</span></h1>
+            <p>从实时比分到深度统计，快速锁定你需要的信息。专为追求效率的体育用户设计，减少噪音，直击核心。</p>
+            <div class="stat-badge">⚡ 覆盖 30+ 项目 · 每日更新</div>
+        </div>
+        <div class="hero-right">
+            <h3>你可以在 bb体育 找到</h3>
+            <ul>
+                <li>主流联赛实时比分与赛程</li>
+                <li>球队、球员数据趋势</li>
+                <li>新闻摘要与短讯推送</li>
+                <li>赛事预告及历史对比</li>
+            </ul>
+            <div class="hero-link-wrp">
+                想要快速上手？查看 <a href="https://main-bbsports.com">bb体育</a> 当前热门板块。
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======== 优势区 ======== -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">为什么选择这个平台</h2>
+        <div class="card-grid">
+            <div class="card">
+                <span class="icon">📊</span>
+                <h3>数据密度合适</h3>
+                <p>不过度堆砌数字，每项统计都关联场景。从控球率到预期进球，帮你快速理解场上态势。</p>
+            </div>
+            <div class="card">
+                <span class="icon">⚡</span>
+                <h3>低延迟更新</h3>
+                <p>关键事件推送间隔控制在秒级，适合关注实时变动的用户。同时保留手动刷新入口。</p>
+            </div>
+            <div class="card">
+                <span class="icon">🧭</span>
+                <h3>导航直观</h3>
+                <p>联赛、球队、球员三个维度清晰分层。不需要反复跳转，三步之内抵达目标页面。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======== 说明区 ======== -->
+<section class="section" style="padding-top: 0;">
+    <div class="container explain-grid">
+        <div class="explain-block">
+            <h3>面向哪些用户？</h3>
+            <p>无论你是日常关注五大联赛、NBA、网球巡回赛，还是追踪小众项目的爱好者，<a href="https://main-bbsports.com">bb体育</a> 都提供对应的数据面板。信息架构以“快速识别”为原则，首页直接展示当前重点赛事。</p>
+            <p>如果你需要赛前分析、实时走势或赛后统计，平台将不同维度的数据整合在同页面内，减少切换成本。</p>
+        </div>
+        <div class="explain-block">
+            <h3>内容如何组织？</h3>
+            <p>首页顶部为焦点赛事卡片，中部为联赛分类索引，底部为最近更新列表。所有链接均指向对应深度页面。另外，搜索功能支持球队、球员、赛事关键词，结果按相关度排序。</p>
+            <p>例如输入球队名称，会同时显示该队近期战绩、核心球员数据以及下一场对手信息。这种聚合方式可以帮助你更快建立认知。</p>
+        </div>
+    </div>
+</section>
+
+<!-- ======== FAQ 摘要 ======== -->
+<section class="section" style="padding-top: 0;">
+    <div class="container faq-mini">
+        <h2 class="section-title" style="margin-bottom: 24px;">常见疑问</h2>
+        <div class="faq-item">
+            <div class="faq-q">数据来源可靠吗？</div>
+            <div class="faq-a">平台聚合多家数据源，并标注更新时间。你可以对比同一场比赛的不同数据维度，自行判断一致性。所有原始链接均可追溯。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">是否需要注册才能浏览？</div>
+            <div class="faq-a">大部分内容对访客开放，包括比分、赛程和基础统计。部分高级筛选或历史对比功能需登录账号（免费）。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">移动端体验如何？</div>
+            <div class="faq-a">页面已适配常见屏幕尺寸。你也可以直接在浏览器中添加主屏幕快捷方式，获得接近应用的使用感。当前移动端菜单为折叠式，保持页面清爽。</div>
+        </div>
+        <div class="faq-item" style="border-bottom: none;">
+            <div class="faq-q">怎样快速找到某支球队？</div>
+            <div class="faq-a">使用顶部搜索框，或从“联赛”入口进入。如果你经常查看特定球队，可以将其加入关注列表（需登录）。另外，<a href="https://main-bbsports.com">bb体育</a> 的首页热门区域也会根据你的浏览记录进行微调。</div>
+        </div>
+    </div>
+</section>
+
+<!-- ======== 底部 ======== -->
+<footer class="footer-bar">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="copy">体育信息聚合 · 简洁 · 实用</div>
+            <div class="link-group">
+                <a href="#">关于</a>
+                <a href="#">使用说明</a>
+                <a href="#">数据来源</a>
+            </div>
+        </div>
+        <div class="footer-highlight">
+            <a href="https://main-bbsports.com">bb体育</a> — 快速识别你需要的赛事数据
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
